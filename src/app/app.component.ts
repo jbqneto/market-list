@@ -11,6 +11,7 @@ export class AppComponent {
 
   public constructor() {
     console.log('Are we running on production ? ' + environment.production);
+    console.log(environment.databaseUrl)
   }
 
 }

@@ -25,6 +25,7 @@ import { LottieModule, provideLottieOptions } from 'ngx-lottie';
     provideLottieOptions({
       player: () => import('lottie-web'),
     }),
+    
   ],
   bootstrap: [AppComponent]
 })
