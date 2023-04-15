@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { HomeComponent } from './components/home/home.component';
-import { LottieModule } from 'ngx-lottie';
+import { LottieModule, provideLottieOptions } from 'ngx-lottie';
 
 @NgModule({
   declarations: [
@@ -19,9 +19,13 @@ import { LottieModule } from 'ngx-lottie';
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
       registrationStrategy: 'registerWhenStable:30000'
-    })
+    }),
   ],
-  providers: [],
+  providers: [
+    provideLottieOptions({
+      player: () => import('lottie-web'),
+    }),
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

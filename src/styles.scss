@@ -5,12 +5,28 @@ html, body, * {
   font-family: 'Rubik', sans-serif;
 }
 
-input.form-group {
-  color: #432000;
-  background-color: #DCE1EB;
+html, body {
+  height: 100%;
+}
+
+.container {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+.form-group {
   border: 0;
   padding: 15px;
   border-radius: 8px;
   font-size: 20px;
   text-align: center;
+}
+
+input.form-group {
+  color: #432000;
+  background-color: #DCE1EB;
 }

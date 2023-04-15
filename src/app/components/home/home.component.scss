@@ -1,0 +1,23 @@
+.image {
+  width: auto;
+  max-height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.lootie {
+  align-self: center;
+  width: 100px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  color: #FDFDFD;
+  background-color: #AC485A;
+  margin-top: 0.8vh;
+}

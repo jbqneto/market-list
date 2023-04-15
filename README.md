@@ -1,6 +1,11 @@
-# FoodListPwa
+# Market List
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
+This is just a small project to try out some PWA and Firebase. :)
+
+## Configuration
+
+1 - Go to firebase console [https://console.firebase.google.com/] and create your project.
+2 - Inside src/environments folder create environment.development.ts and make sure to create the same variables contained in environment.ts but setting your firebase url
 
 ## Development server
 
@@ -17,10 +22,6 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
 ## Further help
 

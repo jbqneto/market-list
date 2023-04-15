@@ -10,7 +10,7 @@ export class HomeComponent {
 
   public animationOptions: AnimationOptions = {
     path: 'https://assets9.lottiefiles.com/packages/lf20_jigbsmll.json',
-    autoplay: true,
+    autoplay: false,
   };
 
 }
