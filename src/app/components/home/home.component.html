@@ -5,8 +5,13 @@
       </ng-lottie>
     </div>
   </div>
-  <form class="actions">
-    <input placeholder="bread..." class="form-group" type="text">
+  <form (submit)="addItem()" class="actions">
+    <input name="item" [(ngModel)]="item" placeholder="bread..." class="form-group" type="text">
     <button class="form-group">Adicionar</button>
   </form>
+  <div class="list">
+    <ul>
+      <li *ngFor="let item of items"></li>
+    </ul>
+  </div>
 </div>

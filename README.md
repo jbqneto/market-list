@@ -5,7 +5,16 @@ This is just a small project to try out some PWA and Firebase. :)
 ## Configuration
 
 1 - Go to firebase console [https://console.firebase.google.com/] and create your project.
-2 - Inside src/environments folder create environment.development.ts and make sure to create the same variables contained in environment.ts but setting your firebase url
+
+2 - Rename ".example.env" to ".env" and replace the firebase url with your own
+
+
+3 - Install firebase locally:
+```
+npm install -g firebase-tools
+```
+
+4 - ng add @angular/fire
 
 ## Development server
 
