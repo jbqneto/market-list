@@ -10,10 +10,13 @@
     <button class="form-group">Adicionar</button>
   </form>
   <div class="list">
-    <ul>
+    <ul *ngIf="items && items.length > 0; else noItem">
       <li *ngFor="let item of items">
         <a href="#" (click)="deleteItem(item.id)">{{item.name}}</a>
       </li>
     </ul>
+    <ng-template #noItem>
+      <span>No item on the list...</span>
+    </ng-template>
   </div>
 </div>

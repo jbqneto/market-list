@@ -1,5 +1,10 @@
 $font-color: #432000;
 
+:host {
+  max-height: 100%;
+  overflow: hidden;
+}
+
 .image {
   width: auto;
   max-height: 100%;
@@ -35,6 +40,7 @@ button {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    user-select: none;
   
     li {
       background-color: #FFFDF8;
