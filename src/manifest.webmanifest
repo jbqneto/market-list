@@ -1,6 +1,6 @@
 {
-  "name": "food-list-pwa",
-  "short_name": "food-list-pwa",
+  "name": "QuickCart Shop list",
+  "short_name": "quick-cart",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
