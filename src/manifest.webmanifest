@@ -1,8 +1,8 @@
 {
   "name": "QuickCart Shop list",
   "short_name": "quick-cart",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "theme_color": "#AC485A",
+  "background_color": "#fff1f3",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",

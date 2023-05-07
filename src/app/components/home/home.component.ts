@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
   public animationOptions: AnimationOptions = {
     path: 'https://assets9.lottiefiles.com/packages/lf20_jigbsmll.json',
     autoplay: false,
-    loop: false
+    loop: false,
   };
 
   public constructor(private service: AppService) {
@@ -59,7 +59,7 @@ export class HomeComponent implements OnInit {
     if (!exists) {
       console.log(this.animation);
       if (this.animation) {
-        this.animation.play();
+        this.playAnimation();
       }
       this.service.addItem(item);
     } else {
@@ -68,7 +68,16 @@ export class HomeComponent implements OnInit {
   }
 
   public deleteItem(id: string): void {
-    this.service.remove(id).subscribe(() => console.log('removed'))
+    this.service.remove(id).subscribe(() => this.playAnimation())
+  }
+
+  private playAnimation() {
+    if (this.animation) {
+      this.animation.play();
+      setTimeout(() => {
+        this.animation?.stop();
+      }, 3000);
+    }
   }
 
 }
