@@ -57,7 +57,6 @@ export class HomeComponent implements OnInit {
     const exists = this.items.some((_item) => _item.name === item);
 
     if (!exists) {
-      console.log(this.animation);
       if (this.animation) {
         this.playAnimation();
       }
