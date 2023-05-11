@@ -1,0 +1,51 @@
+:host {
+  background-color: rgba(245,232,187,255);
+  width: 100%;
+  height: 100%;
+}
+
+.splash {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  max-height: 100%;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+img {
+  max-width: 225px;
+  align-items: center;
+  align-self: center;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInAnimation 1.5s ease-in forwards;
+}
+
+.fade-out {
+  opacity: 1;
+  animation: fadeOutAnimation 1.5s ease-out forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutAnimation {
+  0% {
+    opacity: 1;
+  }
+  
+  100% {
+    opacity: 0;
+  }
+}

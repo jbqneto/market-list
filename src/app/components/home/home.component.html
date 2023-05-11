@@ -6,17 +6,17 @@
     </div>
   </div>
   <form (submit)="addItem()" class="actions">
-    <input name="item" [(ngModel)]="item" placeholder="bread..." class="form-group" type="text">
+    <input name="item" [(ngModel)]="item" placeholder="leite..." class="form-group" type="text">
     <button class="form-group">Adicionar</button>
   </form>
   <div class="list">
     <ul *ngIf="items && items.length > 0; else noItem">
       <li *ngFor="let item of items">
-        <a href="#" (click)="deleteItem(item.id)">{{item.name}}</a>
+        <a (click)="deleteItem(item.id)">{{item.name}}</a>
       </li>
     </ul>
     <ng-template #noItem>
-      <span>No item on the list...</span>
+      <span>...</span>
     </ng-template>
   </div>
 </div>
