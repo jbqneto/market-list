@@ -5,8 +5,8 @@ import { Item } from "../models/firebase-models";
 @Injectable()
 export abstract class AppService {
 
-  public abstract addItem(item: string): void;
-  public abstract listItems(): Observable<Item>;
-  public abstract remove(id: string): Observable<void>
+  public abstract addItem(userId: string, item: string): Observable<void>;
+  public abstract listItems(userId: string): Observable<Item>;
+  public abstract remove(userId: string, id: string): Observable<void>
   
 }

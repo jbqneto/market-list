@@ -1,46 +1,49 @@
 import { Injectable } from "@angular/core";
 import { AppService } from "../app.service";
-import { environment } from 'src/environments/environment.development';
 import { FirebaseConnection } from "./firebase-connection.db";
-import { Database, DatabaseReference, child, get, onValue, push, ref, remove,  } from "firebase/database";
-import { Observable, Subject, map, of } from "rxjs";
+import { Database, DatabaseReference, onValue, push, ref, remove } from "firebase/database";
+import { Observable, Subject, of } from "rxjs";
 import { Item } from "src/app/models/firebase-models";
 
-@Injectable()
 export class FireBaseService extends AppService {
   private schema: DatabaseReference;
   private db: Database;
   private static SCHEMA = 'marketList';
 
-  constructor(db: FirebaseConnection) {
+  constructor() {
     super();
-    this.db = db.getDatabase();
+    this.db = new FirebaseConnection().getDatabase();
     this.schema = ref(this.db, FireBaseService.SCHEMA);
   } 
 
-  public addItem(item: string): void {
-    push(this.schema, item.toLowerCase());
+  public addItem(userId: string, item: string): Observable<void> {
+    push(ref(this.db, this.getUserRef(userId)), item.trim().toLowerCase());
+
+    return of();
   }
 
-  public remove(id: string): Observable<void> {
+  public remove(userId: string, id: string): Observable<void> {
     const subject: Subject<void> = new Subject(); 
-    console.log('will remove: ' + id);
-    remove(ref(this.db, `${FireBaseService.SCHEMA}/${id}`)).then((response) => {
-      subject.next();
-    });
+    remove(ref(this.db, this.getUserRef(userId) + '/' + id))
+    .then(() => subject.next());
 
     return subject;
   }
 
-  public listItems(): Observable<Item> {
+  public listItems(userId: string): Observable<Item> {
     const subject: Subject<Item> = new Subject();
+    const query = ref(this.db, this.getUserRef(userId));
 
-    onValue(this.schema, (snapshot) => {
+    onValue(query, (snapshot) => {
       const value: Item = snapshot.val();
       subject.next(value);
     });
     
     return subject.asObservable();
+  }
+
+  private getUserRef(userId: string): string {
+    return `${FireBaseService.SCHEMA}/${userId}`;
   }
 
 }
