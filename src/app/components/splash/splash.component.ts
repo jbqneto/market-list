@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/firebase/firebase-auth.service';
-import { StorageService } from 'src/app/services/storage-service';
 
 @Component({
   selector: 'app-splash',
@@ -20,7 +19,11 @@ export class SplashComponent implements OnInit {
     const user = this.service.getUser(); 
     setTimeout(() => {
       this.imgClass = 'fade-out';
-      this.navigate(user ? '/shop' : '/login');
+      if (user) {
+        this.navigate('/shop');
+      } else {
+        this.navigate('/login');
+      }
     }, 3000);
   }
 

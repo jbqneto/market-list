@@ -7,7 +7,7 @@ import firebase from 'firebase/compat/app';
 import * as firebaseui from 'firebaseui'
 import { User } from 'src/app/models/user';
 import { AuthService } from 'src/app/services/firebase/firebase-auth.service';
-import { FirebaseConfig } from 'src/app/services/firebase/firebase-config';
+import { FirebaseHelper } from 'src/app/services/firebase/firebase-config';
 import { StorageService } from 'src/app/services/storage-service';
 
 @Component({
